@@ -1,7 +1,7 @@
 package steps;
 
 import dto.GetCurrencyListRes.CurrencyListDTO;
-import dto.getFaresCalenderReq.GetFaresCalender;
+import dto.GetFaresCalenderReq.GetFaresCalender;
 import io.restassured.response.Response;
 import utility.DateUtils;
 

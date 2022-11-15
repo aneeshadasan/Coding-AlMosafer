@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class GetCurrencyListTest extends BaseTest {
 
     @Test
-    @DisplayName("validate success response ")
+    @DisplayName("verify that Get CurrencyList service is responding with 200 - success response ")
     public void verifyGetCurrencyListSuccessResponse() {
         getCurrencyListSteps
                 .whenICallGetCurrencyList()
@@ -14,7 +14,7 @@ public class GetCurrencyListTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Validate the Fields for each Currency ")
+    @DisplayName("Validate the Fields for each Currency is not null in the response")
     public void verifyGetCurrencyList() {
 
         getCurrencyListSteps
@@ -24,7 +24,7 @@ public class GetCurrencyListTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Rate should be 1 for in the for the Base Currency ")
+    @DisplayName("Rate should be 1 for in the for the Base Currency in the response")
     public void verifyRateForTheBaseCurrency() {
 
         getCurrencyListSteps

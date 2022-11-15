@@ -1,5 +1,5 @@
 
-package dto.getFaresCalenderReq;
+package dto.GetFaresCalenderReq;
 
 import lombok.Builder;
 import lombok.Data;

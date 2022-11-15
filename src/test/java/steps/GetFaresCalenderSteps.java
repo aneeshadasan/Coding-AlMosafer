@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import data.ENDPOINTS;
 import dto.GetFaresCalenderRes.GetFaresCalenderResDTO;
-import dto.getFaresCalenderReq.GetFaresCalender;
-import dto.getFaresCalenderReq.Leg;
-import dto.getFaresCalenderReq.Pax;
+import dto.GetFaresCalenderReq.GetFaresCalender;
+import dto.GetFaresCalenderReq.Leg;
+import dto.GetFaresCalenderReq.Pax;
 import io.qameta.allure.Step;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -24,7 +24,7 @@ public class GetFaresCalenderSteps extends BaseSteps {
     public static String payload;
     Boolean withInRangeFlag = false;
 
-
+/*Method to call GetFaresCalender POST Service */
     @Step
     public GetFaresCalenderSteps whenICallGetFaresCalender() {
 
@@ -50,7 +50,7 @@ public class GetFaresCalenderSteps extends BaseSteps {
                 "GetFaresCalender Response Status is not as expected");
         return this;
     }
-
+    /*Method to verify price is not Null in the GetFaresCalender Service response*/
     public GetFaresCalenderSteps thenIVerifyPriceInTheReponse() {
 
         String responseBodyString = response.getBody().asString();
@@ -68,7 +68,7 @@ public class GetFaresCalenderSteps extends BaseSteps {
         }
         return this;
     }
-
+    /*Method to verify the dates in the response is within the range of dates given in the payload*/
     public GetFaresCalenderSteps thenIVerifyResponseDates() {
 
         String responseBodyString = response.getBody().asString();
@@ -110,8 +110,8 @@ public class GetFaresCalenderSteps extends BaseSteps {
 
     }
 
-
-    public GetFaresCalenderSteps giveIHaveGetFaresPayloadForOneWay(LocalDate dateFrom, LocalDate dateTo) {
+/*Create payload for getfaresclender - of oneWay journey" */
+    public GetFaresCalenderSteps givenIHaveGetFaresPayloadForOneWay(LocalDate dateFrom, LocalDate dateTo) {
 
         getFaresCalenderPayload = GetFaresCalender
                 .builder()
@@ -131,7 +131,7 @@ public class GetFaresCalenderSteps extends BaseSteps {
         return this;
 
     }
-
+    /*Create payload for getfaresclender - Oneway journey with Cabin" */
     public GetFaresCalenderSteps giveIHaveGetFaresPayloadForOneWayWithCabinAs(LocalDate dateFrom, LocalDate dateTo, String cabin) {
 
         getFaresCalenderPayload = GetFaresCalender
@@ -152,7 +152,7 @@ public class GetFaresCalenderSteps extends BaseSteps {
         return this;
 
     }
-
+    /*Create payload for getfaresclender - RoundTrip journey" */
     @Step
     public GetFaresCalenderSteps giveIHaveGetFaresPayloadForRoundTrip(LocalDate dateFrom, LocalDate dateTo) {
         getFaresCalenderPayload = GetFaresCalender

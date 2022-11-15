@@ -16,11 +16,11 @@ public class GetFaresCalenderTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify price is returned for the given dates and Route ")
+    @DisplayName("Verify price is returned for the given dates and route ")
     public void verifyPriceIsNotNull() {
 
         getFaresCalenderSteps
-                .giveIHaveGetFaresPayloadForOneWay(dateFrom, dateTo)
+                .givenIHaveGetFaresPayloadForOneWay(dateFrom, dateTo)
                 .whenICallGetFaresCalender()
                 .thenIVerifySuccessResponse()
                 .thenIVerifyPriceInTheReponse();
@@ -31,7 +31,7 @@ public class GetFaresCalenderTest extends BaseTest {
     public void verifySuccessResponseForOnewayTrip() {
 
         getFaresCalenderSteps
-                .giveIHaveGetFaresPayloadForOneWay(dateFrom, dateTo)
+                .givenIHaveGetFaresPayloadForOneWay(dateFrom, dateTo)
                 .whenICallGetFaresCalender()
                 .thenIVerifySuccessResponse()
                 .thenIVerifyResponseDates();
@@ -73,10 +73,10 @@ public class GetFaresCalenderTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Verify that the service responds with Error for Past date ")
+    @DisplayName("should get error responds for Past date in the payload ")
     public void verifyErrorResponseForPayloadWithPastDate() {
         getFaresCalenderSteps
-                .giveIHaveGetFaresPayloadForOneWay(LocalDate.now().minusDays(10), LocalDate.now().minusDays(5))
+                .givenIHaveGetFaresPayloadForOneWay(LocalDate.now().minusDays(10), LocalDate.now().minusDays(5))
                 .whenICallGetFaresCalender()
                 .thenIVerifyErrorResponse();
     }

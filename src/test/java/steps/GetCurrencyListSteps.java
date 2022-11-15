@@ -11,7 +11,7 @@ import io.qameta.allure.Step;
 import org.apache.http.HttpStatus;
 
 public class GetCurrencyListSteps extends BaseSteps {
-
+/* To Call Get currency list service" */
     @Step
     public GetCurrencyListSteps whenICallGetCurrencyList() {
 
@@ -22,7 +22,7 @@ public class GetCurrencyListSteps extends BaseSteps {
         return this;
     }
 
-
+/* To verify response status of  Get currency list service" */
     @Step
     public GetCurrencyListSteps thenIVerifySuccessResponse() {
 
@@ -31,7 +31,7 @@ public class GetCurrencyListSteps extends BaseSteps {
 
         return this;
     }
-
+    /* To verify the fields in the response of  Get currency list service" */
     @Step
     public GetCurrencyListSteps thenIVerifyResponse() {
 
