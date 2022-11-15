@@ -1,5 +1,5 @@
 # Coding-AlMosafer
-In this project , I have taken the below service and created the tests 
+In this project , I have taken the below APIs  and created the tests 
 
 1. POST - GetFaresCalenderService  - (flights/flight/get-fares-calender)
 2. GET - Getcurrencylist  - (/currency/list)
